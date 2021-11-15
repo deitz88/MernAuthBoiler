@@ -25,7 +25,7 @@ git push -u origin master
 add your variables in .env
 
 ```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=local DB or cloud DB
+DATABASE_URL=mongodb://localhost:27017/<DB name> //or remote DB URL
+BUCKET_NAME=cloud Bucket name if using photos, i.e. AWS. 
 SECRET=jkansdiubqfp9739f ****random seret for auth
 ```
