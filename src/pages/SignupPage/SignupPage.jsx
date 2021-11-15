@@ -87,9 +87,13 @@ export default function SignUpPage(props) {
         }
         history.push("/index");
     }
-    setTimeout(() => {
-        setError(null);
-    }, 8000);
+    
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setError(null);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, [error]);
 
     return (
         <>

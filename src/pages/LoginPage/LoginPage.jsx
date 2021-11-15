@@ -38,6 +38,13 @@ export default function LoginPage(props) {
         }
     }
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setError(null);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, [error]);
+
     return (
         <>
             <Grid

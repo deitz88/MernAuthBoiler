@@ -15,7 +15,6 @@ function Dropdown({ setShow, handleLogout }) {
     return (
         <div id='dropdown'>
             <Link id='profileButton' className='dropdownItem' to='/profile' onClick={closeDropdown}>Profile</Link>
-            <Link id='workoutsButton' className='dropdownItem' to='/workouts' onClick={closeDropdown}>Workouts</Link>
             <Link id='logoutButton' className='dropdownItem' to='/index' onClick={handleLogout}>Logout</Link>
         </div>
 
