@@ -32,11 +32,14 @@ function App() {
         <Route exact path="/register">
           <SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />
         </Route>
+        <Route exact path="/index">
+                Home/Landing PAGE COMPONENT WOULD GO HEREE
+              </Route>
         {userService.getUser() ?
           <>
             <Switch>
-              <Route exact path="/index">
-                Home PAGE COMPONENT WOULD GO HEREE
+              <Route exact path='/profile'>
+                profile page here!
               </Route>
             </Switch>
           </>
