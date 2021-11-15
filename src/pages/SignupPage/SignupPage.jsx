@@ -62,10 +62,23 @@ export default function SignUpPage(props) {
         }
         // Password
         if (typeof formInput.password !== "undefined") {
-            if (!validator.isStrongPassword(formInput.password)) {
+            if (!validator.isStrongPassword(formInput.password, {
+                minLength: 8,
+                minLowercase: 1,
+                minUppercase: 1,
+                minNumbers: 1,
+                // minSymbols: 1, 
+                returnScore: false,
+                pointsPerUnique: 1,
+                pointsPerRepeat: 0.5,
+                pointsForContainingLower: 10,
+                pointsForContainingUpper: 10,
+                pointsForContainingNumber: 10,
+                pointsForContainingSymbol: 10
+            })) {
                 formIsValid = false;
                 setError(`Password must be 8 characters
-                and must contain at least 1: uppercase, lowercase, symbol and number`)
+                and must contain at least 1: uppercase, lowercase, and number`)
             }
         }
 
@@ -87,7 +100,7 @@ export default function SignUpPage(props) {
         }
         history.push("/index");
     }
-    
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setError(null);
