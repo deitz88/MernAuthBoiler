@@ -10,7 +10,7 @@
 git init
 git add .
 git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
+git remote add origin git@github.com:<nusername>/<gitfilename>.git // this will be whatever your address will be
 git push -u origin master
 ```
 
