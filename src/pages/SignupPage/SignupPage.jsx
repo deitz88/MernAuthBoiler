@@ -67,7 +67,7 @@ export default function SignUpPage(props) {
                 minLowercase: 1,
                 minUppercase: 1,
                 minNumbers: 1,
-                minSymbols: 0, 
+                minSymbols: 0,
                 returnScore: false,
                 pointsPerUnique: 1,
                 pointsPerRepeat: 0.5,
@@ -96,9 +96,13 @@ export default function SignUpPage(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         if (handleValidation()) {
-            userService.signup(formInput);
+            try {
+                await userService.signup(formInput);
+                history.push("/index");
+            } catch (err) {
+                setError(err.message)
+            }
         }
-        history.push("/index");
     }
 
     useEffect(() => {
