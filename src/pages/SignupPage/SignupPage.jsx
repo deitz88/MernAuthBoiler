@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import { Grid, Header, Form, Segment, Button, Icon } from "semantic-ui-react";
 import userService from "../../utils/userService";
